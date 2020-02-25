@@ -1,0 +1,36 @@
+nav {
+    background: linear-gradient(90deg, rgba(255,107,0,1) 0%, rgba(247,80,22,1) 50%, rgba(235,52,40,1) 100%);
+    display:flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    margin:0;
+    height: 5em;
+}
+
+
+.searchInput {
+    width: 80%;
+    background-color:rgba(255, 255, 255, 0.247);
+    padding:20px 20px;
+    border:none;
+    outline:none;
+    border-radius: 2px;
+    color:white;
+    flex-shrink: 5;
+}
+
+.searchInput::placeholder {
+    color:white;
+}
+
+.searchButton {
+    width: 5%;
+    background-color:rgba(255, 255, 255, 0.89);
+    margin-left:5px;
+    padding:20px 20px;
+    border:none;
+    outline:none;
+    border-radius: 2px;
+    flex-shrink: 0;
+}
