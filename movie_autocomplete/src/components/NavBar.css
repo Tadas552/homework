@@ -11,7 +11,7 @@ nav {
 } 
 
 
-.searchInput {
+.search_input {
     padding-left:30px;
     width: 80%;
     height: 40px;
@@ -26,11 +26,11 @@ nav {
     padding: 10px 60px;
 }
 
-.searchInput::placeholder {
+.search_input::placeholder {
     color:white;
 }
 
-.searchButton {
+.search_button {
     width: 60px;
     height: 60px;
     min-width: 60px ;
