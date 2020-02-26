@@ -4,16 +4,13 @@ nav {
     flex-flow: row nowrap;
     align-items: center;
     justify-content: center;
-    margin:0;
-    height: 5em;
+    height: 6em;
     position: relative;
-    padding: 0;
 } 
 
 
 .search_input {
-    padding-left:30px;
-    width: 80%;
+    width:90%;
     height: 40px;
     background-color:rgba(255, 255, 255, 0.247);
     border:none;
@@ -33,17 +30,63 @@ nav {
 .search_button {
     width: 60px;
     height: 60px;
-    min-width: 60px ;
     background-color:rgba(255, 255, 255, 0.89);
-    margin-left:5px;
     min-width: 40px;
     border:none;
     outline:none;
     border-radius: 2px;
     cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg className='search' width='30px' height='30px' viewBox='0 0 92 92' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20.8 39.27c0-11.016 8.808-19.976 19.637-19.976 10.827 0 19.635 8.96 19.635 19.972 0 11.014-8.808 19.976-19.635 19.976-10.83 0-19.64-8.96-19.64-19.976zm55.472 32.037l-15.976-16.25c3.357-4.363 5.376-9.835 5.376-15.788 0-14.16-11.32-25.67-25.232-25.67-13.923 0-25.24 11.51-25.24 25.67s11.32 25.67 25.237 25.67c4.776 0 9.227-1.388 13.04-3.74L69.84 77.85c1.77 1.8 4.664 1.8 6.432 0 1.77-1.8 1.77-4.744 0-6.544z' fill='%23BE6B46'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 15px 15px;
 }
 
-svg.search {
-    fill:#BE6B46;
+.autocomplete {
+    display:flex;
+    flex-flow: row nowrap;
+    position: relative;
+    display: inline-block;
+    width:80%;
 }
 
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  top: 100%;
+  left: 50px;
+  right: 0;
+  border-radius:4px;
+  border-bottom: 1px solid #d4d4d4;
+  
+}
+
+.autocomplete .main_input {
+    border-bottom: 1px solid #d4d4d4;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' className='movie' width='30px' height='30px' viewBox='0 0 512 512' %3E%3Cpath d='M352,255.5l-192,96v-192L352,255.5z M512,31.5v448H0v-448H512z M320,95.5h64v-32h-64V95.5z M224,95.5h64v-32h-64V95.5z M128,95.5h64v-32h-64V95.5z M32,95.5h64v-32H32V95.5z M96,415.5H32v32h64V415.5z M192,415.5h-64v32h64V415.5z M288,415.5h-64v32h64 V415.5z M384,415.5h-64v32h64V415.5z M480,415.5h-64v32h64V415.5z M480,127.5H32v256h448V127.5z M480,63.5h-64v32h64V63.5z' fill='black'/%3E%3C/svg%3E ");
+    background-repeat: no-repeat;
+    background-position: 10px 15px;
+    padding: 10px 60px;
+}
+
+.autocomplete-items div {
+    padding: 20px;
+    cursor: pointer;
+    background-color: #fff;
+    font-weight: bold;
+    padding: 10px 60px;
+}
+
+.autocomplete-items p {
+    font-size: 13px;
+    color:rgb(70, 70, 70);
+    font-weight: lighter;
+    margin-top: -2px;
+    margin-bottom: -5px;;
+}
+
+.autocomplete-items div:hover {
+    background-color: rgb(243, 243, 243);
+}
