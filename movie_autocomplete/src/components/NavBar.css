@@ -6,18 +6,24 @@ nav {
     justify-content: center;
     margin:0;
     height: 5em;
-}
+    position: relative;
+    padding: 0;
+} 
 
 
 .searchInput {
+    padding-left:30px;
     width: 80%;
+    height: 40px;
     background-color:rgba(255, 255, 255, 0.247);
-    padding:20px 20px;
     border:none;
     outline:none;
     border-radius: 2px;
     color:white;
-    flex-shrink: 5;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' className='movie' width='30px' height='30px' viewBox='0 0 512 512' %3E%3Cpath d='M352,255.5l-192,96v-192L352,255.5z M512,31.5v448H0v-448H512z M320,95.5h64v-32h-64V95.5z M224,95.5h64v-32h-64V95.5z M128,95.5h64v-32h-64V95.5z M32,95.5h64v-32H32V95.5z M96,415.5H32v32h64V415.5z M192,415.5h-64v32h64V415.5z M288,415.5h-64v32h64 V415.5z M384,415.5h-64v32h64V415.5z M480,415.5h-64v32h64V415.5z M480,127.5H32v256h448V127.5z M480,63.5h-64v32h64V63.5z' fill='white'/%3E%3C/svg%3E ");
+    background-repeat: no-repeat;
+    background-position: 10px 15px;
+    padding: 10px 60px;
 }
 
 .searchInput::placeholder {
@@ -25,12 +31,19 @@ nav {
 }
 
 .searchButton {
-    width: 5%;
+    width: 60px;
+    height: 60px;
+    min-width: 60px ;
     background-color:rgba(255, 255, 255, 0.89);
     margin-left:5px;
-    padding:20px 20px;
+    min-width: 40px;
     border:none;
     outline:none;
     border-radius: 2px;
-    flex-shrink: 0;
+    cursor: pointer;
 }
+
+svg.search {
+    fill:#BE6B46;
+}
+
