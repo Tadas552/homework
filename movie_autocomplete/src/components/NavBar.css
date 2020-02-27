@@ -8,19 +8,45 @@ nav {
     position: relative;
 } 
 
+.input_container {
+    display:flex;
+    flex-flow:row nowrap;
+}
+
+.search_svg {
+    background-color:rgba(255, 255, 255, 0.247);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' className='movie' width='30px' height='30px' viewBox='0 0 512 512' %3E%3Cpath d='M352,255.5l-192,96v-192L352,255.5z M512,31.5v448H0v-448H512z M320,95.5h64v-32h-64V95.5z M224,95.5h64v-32h-64V95.5z M128,95.5h64v-32h-64V95.5z M32,95.5h64v-32H32V95.5z M96,415.5H32v32h64V415.5z M192,415.5h-64v32h64V415.5z M288,415.5h-64v32h64 V415.5z M384,415.5h-64v32h64V415.5z M480,415.5h-64v32h64V415.5z M480,127.5H32v256h448V127.5z M480,63.5h-64v32h64V63.5z' fill='white'/%3E%3C/svg%3E ");
+    background-repeat: no-repeat;
+    background-position: 10px 15px;
+    height:40px;
+    padding:10px 30px;
+}
+
 
 .search_input {
-    width:90%;
+    width:100%;
     height: 40px;
     background-color:rgba(255, 255, 255, 0.247);
     border:none;
     outline:none;
     border-radius: 2px;
     color:white;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' className='movie' width='30px' height='30px' viewBox='0 0 512 512' %3E%3Cpath d='M352,255.5l-192,96v-192L352,255.5z M512,31.5v448H0v-448H512z M320,95.5h64v-32h-64V95.5z M224,95.5h64v-32h-64V95.5z M128,95.5h64v-32h-64V95.5z M32,95.5h64v-32H32V95.5z M96,415.5H32v32h64V415.5z M192,415.5h-64v32h64V415.5z M288,415.5h-64v32h64 V415.5z M384,415.5h-64v32h64V415.5z M480,415.5h-64v32h64V415.5z M480,127.5H32v256h448V127.5z M480,63.5h-64v32h64V63.5z' fill='white'/%3E%3C/svg%3E ");
+    padding: 10px;
+    transition: all .2s ease-out;
+}
+
+
+.search_input:focus {
+    color:black;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' className='movie' width='20px' height='20px' viewBox='0 0 512 512' %3E%3Cpath d='M352,255.5l-192,96v-192L352,255.5z M512,31.5v448H0v-448H512z M320,95.5h64v-32h-64V95.5z M224,95.5h64v-32h-64V95.5z M128,95.5h64v-32h-64V95.5z M32,95.5h64v-32H32V95.5z M96,415.5H32v32h64V415.5z M192,415.5h-64v32h64V415.5z M288,415.5h-64v32h64 V415.5z M384,415.5h-64v32h64V415.5z M480,415.5h-64v32h64V415.5z M480,127.5H32v256h448V127.5z M480,63.5h-64v32h64V63.5z' fill='black'/%3E%3C/svg%3E ");
     background-repeat: no-repeat;
-    background-position: 10px 15px;
+    background-color: white;
     padding: 10px 60px;
+    font-weight: bold;
+    font-size:15px;
+    background-position: 10px 20px;
+    border-radius: 4px 4px 0 0;
+    border-bottom: 1px solid #d4d4d4;
 }
 
 .search_input::placeholder {
@@ -32,6 +58,7 @@ nav {
     height: 60px;
     background-color:rgba(255, 255, 255, 0.89);
     min-width: 40px;
+    margin-left: 5px;
     border:none;
     outline:none;
     border-radius: 2px;
@@ -42,11 +69,9 @@ nav {
 }
 
 .autocomplete {
-    display:flex;
-    flex-flow: row nowrap;
     position: relative;
-    display: inline-block;
     width:80%;
+    float: right;
 }
 
 .autocomplete-items {
@@ -56,35 +81,27 @@ nav {
   border-top: none;
   z-index: 99;
   top: 100%;
-  left: 50px;
+  left: 60px;
   right: 0;
-  border-radius:4px;
-  border-bottom: 1px solid #d4d4d4;
+  border-radius:0 0 4px 4px;
+  color:rgb(70, 70, 70);
   
 }
 
-.autocomplete .main_input {
-    border-bottom: 1px solid #d4d4d4;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' className='movie' width='30px' height='30px' viewBox='0 0 512 512' %3E%3Cpath d='M352,255.5l-192,96v-192L352,255.5z M512,31.5v448H0v-448H512z M320,95.5h64v-32h-64V95.5z M224,95.5h64v-32h-64V95.5z M128,95.5h64v-32h-64V95.5z M32,95.5h64v-32H32V95.5z M96,415.5H32v32h64V415.5z M192,415.5h-64v32h64V415.5z M288,415.5h-64v32h64 V415.5z M384,415.5h-64v32h64V415.5z M480,415.5h-64v32h64V415.5z M480,127.5H32v256h448V127.5z M480,63.5h-64v32h64V63.5z' fill='black'/%3E%3C/svg%3E ");
-    background-repeat: no-repeat;
-    background-position: 10px 15px;
-    padding: 10px 60px;
-}
-
 .autocomplete-items div {
-    padding: 20px;
     cursor: pointer;
     background-color: #fff;
     font-weight: bold;
-    padding: 10px 60px;
+    padding: 20px 60px;
+    transition: all .5s ease-out;
 }
 
 .autocomplete-items p {
     font-size: 13px;
-    color:rgb(70, 70, 70);
     font-weight: lighter;
     margin-top: -2px;
     margin-bottom: -5px;;
+    color:rgb(70, 70, 70);
 }
 
 .autocomplete-items div:hover {
