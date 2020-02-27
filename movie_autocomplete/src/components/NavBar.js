@@ -38,7 +38,8 @@ export default class NavBar extends Component {
                         onBlur={this.handleBlur}
                         autoComplete="off"></input>
                     </div>
-                        {this.state.isOpen && this.state.searchText.length>2 && <div className="autocomplete-items">
+                        {this.state.isOpen && this.state.searchText.length>2 && this.state.movies.length > 0
+                        && <div className="autocomplete-items">
                                 {this.state.movies.map(movie => 
                                     {return <div onMouseDown={this.handleSelect.bind(this, movie.original_title)} key={movie.id}>{movie.original_title}
                                         <p>{movie.vote_average} Rating, 
