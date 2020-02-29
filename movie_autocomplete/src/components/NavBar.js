@@ -18,7 +18,13 @@ export default class NavBar extends Component {
 
     async handleChange(e) {
         this.setState({searchText : e.target.value});
-        this.setState({movies: await movies(e.target.value)});
+
+        const fetchedMovies = await movies(e.target.value);
+        if(fetchedMovies) {
+            this.setState({movies: fetchedMovies.slice(0,8)});   
+        } else {
+            this.setState({movies: []});
+        }
     }
 
     handleFocus = () => this.setState({isOpen:true});
